@@ -1,0 +1,46 @@
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = green
+    changed = red
+    untracked = cyan
+[alias]
+    co = checkout
+    ci = commit
+    br = branch
+    st = status
+    gn = goodness
+    aa = add --all
+    gnc = goodness --cached
+    dc = diff --cached
+
+    # Fancy logging.
+    #  h = head
+    #  hp = head with patch
+    #  r = recent commits, only current branch
+    #  ra = recent commits, all reachable refs
+    #  l = all commits, only current branch
+    #  la = all commits, all reachable refs
+    head = !git l -1
+    h = !git head
+    hp = "!. ~/.githelpers && show_git_head"
+    r = !git l -30
+    ra = !git r --all
+    l = "!. ~/.githelpers && pretty_git_log"
+    la = !git l --all
+[push]
+     default = matching
+[user]
+     name = Dennis Mott
+     email = dennismott@tactica.com
